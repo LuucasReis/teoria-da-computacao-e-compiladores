@@ -1,29 +1,51 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+
+int* AlocarVetor(int n);
+void PreencherVetor(int *Array, int n);
+void PrintarVetor(int *Array, int n);
+
 int main()
 {
-    int *array, n;
+    int  n;
     printf("Digite o tamanho do array: ");
     scanf("%d", &n);
 
-    array = (int *) malloc(n * sizeof(int));
+    int* array = AlocarVetor(n);
+
+    PreencherVetor(array, n);
+    PrintarVetor(array, n);
+
+    free(array);
+}
+
+int* AlocarVetor(int n)
+{
+    int *array = array = (int *) malloc(n * sizeof(int));
+
     if (array == NULL)
         {
             printf("Falha na alocação de memória.\n");
-            return 1;
+            return NULL;
         }
+    return array;
+}
 
-    for (int i = 0; i < n; i++)
+void PreencherVetor(int *Array, int n)
+{
+    for (int i = 0; i < n ; i++)
         {
-            array[i] = i * 10;
+            Array[i] = i * 10;
         }
 
+}
+
+void PrintarVetor(int *Array, int n)
+{
     printf("Array: ");
     for (int i = 0; i < n; i++)
         {
-            printf("%d ", array[i]);
+            printf("%d ", Array[i]);
         }
-
-    free(array);
 }

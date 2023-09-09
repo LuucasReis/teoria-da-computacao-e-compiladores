@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1694283629 source:c:\users\lucasfernando_frwk\documents\faculdade\exercicios\exmemoriadinamica\main.c
+	<stdio.h>
+	<stdlib.h>
+
